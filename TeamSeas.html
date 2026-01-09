@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body{
+ margin: 0;
+ font-family: monospace;
+ background: linear-gradient(to bottom, rgb(69, 117, 207), skyblue);
+text-align: center;
+}
+h1{
+    font-size: 3em;
+    margin:20px 0;
+    transition: color 20s, transform 20s;
+
+}
+h1:hover{
+transform: scale(1.2);
+color: rgb(255, 255, 255);
+}
+.scene{
+    position: relative;
+    height: 1000px;
+    overflow: hidden;
+
+}
+p{
+    color: white;
+}
+.sun{
+    position: absolute;
+    top:40px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    border-radius: 50%;
+   transition: color 10s, transform 10s;
+}
+.sun:hover{
+transform: scale(1.7);
+    background-color: rgb(236, 168, 42);
+}
+
+.cloud{
+    position: absolute;
+    top: 80px;
+    width: 120px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 3s ease-in-out;
+}
+.cloud::before,.cloud::after{
+    content:'';
+    position: absolute;
+    background:white ;
+    height: 80px;
+    width: 80px;
+    border-radius:50% ;
+    top: -20%;
+}
+.cloud::before{
+    left: -40px;
+}
+.cloud::after{
+    right:-40px;
+}
+.cloud1{
+    left: 50px;
+}
+.cloud2{
+    left: 250px; top: 120px;
+}
+.cloud:hover{
+transform: translateX(500px);
+}
+.Ocean{
+    position: relative;
+    height: 400px;
+    background: linear-gradient(to top, #053a9c, #2583e8);
+    overflow: hidden;
+}
+.fish{
+    position: absolute;
+    bottom: 50%;
+    left: -100px;
+    width: 100px;
+    height: 50px;
+    background-color: orange;
+    border-radius: 50px 50px 50px 0px;
+    transform: rotate(10deg);
+    animation: swim 10s linear infinite;
+
+}
+
+.fish::after{
+    content:"";
+    position: absolute;
+    left: -30px;
+    top: 5px;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 35px solid orange;
+}
+.fish::before{
+    content: "";
+    position: absolute;
+    right: 15px;
+    top:10px;
+    width: 12px;
+    height: 12px;
+    background-color:rgb(0, 0, 0);
+    border-radius: 50%;
+    box-shadow: -2px -2px 0 0 rgb(255, 255, 255);
+}
+@keyframes swim{
+    0%{left:-120px;}
+100% {left:100%;}
+}
+footer{
+    background-color: #053a9c;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 1em;
+    margin-top:30px;
+}
+footer p{
+    margin:0;
+    opacity: 0.8;
+}
+@media(max-width:600px){
+    h1{
+        font-size: 2em;
+    }
+    .scene{
+        height: 250px;
+    }
+    .sun{
+        width: 70px;
+        height: 70px;
+    }
+    .cloud{
+        translate:scale(0.7);
+    }
+    .Ocean{
+        height: 150px;   
+    }
+    .fish{
+        width: 70px;
+        height: 35px;
+    }
+    p{
+        font-size:0.9em ;
+        padding:0 15px ;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <h1>Save The Ocean</h1>
+    <div class="scene">
+        <div class="sun"></div>
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        </div>
+        <div class="Ocean">
+        <div class="fish"></div>
+        </div>
+        <footer>
+            <p> &copy; PLS DONATE, I'M JUST COPYING MR.BEAST .</p>
+        </footer>
+        
+</body>
+</html>
